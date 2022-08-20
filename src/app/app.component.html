@@ -1,5 +1,13 @@
-<input type="text" [(ngModel)]="enteredUrl">
-<br>
-<button type="button" (click)="clickedOn()">Click To Generate Short URL</button>
-<br>
-<a [href]=uniqURL>{{uniqURL}}</a>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div>
+    <label class="w3-text-teal"><b>Enter the URL</b></label>
+    <br>
+    <input type="text" class="w3-input w3-border w3-light-grey" [(ngModel)]="enteredUrl">
+    <br>
+    <button type="button" class="w3-btn w3-blue-grey" (click)="clickedOn()">Click To Generate Short URL</button>
+    <br>
+    <div *ngIf="uniqURL !== ''">
+        <label class="w3-text-teal"><b>Generated Short URL is given below</b></label><br>
+        <a class="w3-text-teal" target="blank" [href]=uniqURL>{{uniqURL}}</a>
+    </div>
+</div>
